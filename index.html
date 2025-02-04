@@ -74,6 +74,17 @@
             align-items: center;
             position: relative;
         }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            transition: font-size 0.3s ease, font-weight 0.3s ease;
+        }
+        
+        .navbar.solid .logo {
+            font-size: 20px;
+            font-weight: normal;
+        }
         
         section {
             padding: 80px 50px;
@@ -142,6 +153,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const navbar = document.getElementById("navbar");
+            const logo = document.querySelector(".logo");
             window.addEventListener("scroll", function () {
                 if (window.scrollY > 50) {
                     navbar.classList.add("solid");
