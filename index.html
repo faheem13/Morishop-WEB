@@ -75,6 +75,13 @@
             position: relative;
         }
 
+        .top-container img {
+            position: absolute;
+            right: 80px;
+            height: 650px;
+            width: auto;
+        }
+
         .logo {
             font-size: 28px;
             font-weight: bold;
@@ -96,6 +103,13 @@
             }
             .top-container {
                 height: 800px;
+                flex-direction: column;
+            }
+            .top-container img {
+                position: static;
+                margin-top: 40px;
+                height: 600px;
+                width: auto;
             }
             .banner h1 {
                 font-size: 24px; /* Adjust text size for better readability */
@@ -114,6 +128,7 @@
         <section id="home" class="banner">
             <h1>Welcome to MoriShops</h1>
         </section>
+        <img src="assets/seller_1.jpg" alt="Top Image">
     </div>
     <header id="navbar" class="navbar">
         <div class="logo">MoriShops</div>
