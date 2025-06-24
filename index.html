@@ -3,172 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morishops</title>
+    <title>MiniLab Nex</title>
+    <!-- Import Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; color: #333; }
         .navbar {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            transition: all 0.3s ease;
-            z-index: 1000;
+            position: fixed; top: 0; left: 0; width: 100%; display: flex; align-items: center;
+            justify-content: space-between; padding: 20px 40px; z-index: 1000;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
             background: transparent;
-            color: white;
         }
-        
         .navbar.solid {
-            background: white;
-            color: black;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
+        .navbar .brand {
+            display: flex; align-items: center;
         }
-        
-        .navbar ul li {
-            display: inline;
+        .nav-logo {
+            width: 40px; height: auto; margin-right: 12px;
         }
-        
-        .navbar ul li a {
-            text-decoration: none;
-            font-size: 16px;
-            color: inherit;
+        .logo {
+            font-size: 24px; font-weight: 700;
+            /* White when at top */
+            color: #ffffff;
             transition: color 0.3s ease;
         }
-        
-        .banner {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            font-size: 32px;
-            font-weight: bold;
-        }
-        
-        .top-container {
-            width: 100%;
-            height: 900px;
-            background-color: darkgreen;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .top-container img {
-            position: absolute;
-            right: 80px;
-            height: 650px;
-            width: auto;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            transition: font-size 0.3s ease, font-weight 0.3s ease;
-        }
-        
         .navbar.solid .logo {
-            font-size: 20px;
-            font-weight: normal;
+            /* Black when scrolled */
+            color: #000000;
         }
-        
-        section {
-            padding: 80px 50px;
+        .top-container {
+            position: relative; width: 100%; height: 100vh;
+            background: url('assets/website_banner.png') center/cover no-repeat;
         }
-        
+        .top-container::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .banner {
+            position: relative; display: flex; align-items: center;
+            justify-content: center; height: 100%; text-align: center;
+            padding: 0 20px;
+        }
+        .banner h1 {
+            font-size: 48px; font-weight: 700; color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        section { padding: 80px 20px; max-width: 800px; margin: auto; }
+        .mission, .contact {
+            margin-top: 60px; background: #f9f9f9; border-radius: 8px;
+            padding: 40px 20px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .mission h2, .contact h2 {
+            font-size: 32px; font-weight: 500; margin-bottom: 20px;
+            color: #222;
+        }
+        .mission p, .contact p {
+            font-size: 18px; line-height: 1.6; color: #555;
+        }
         @media (max-width: 768px) {
-            .navbar {
-                justify-content: center;
-            }
-            .top-container {
-                height: 800px;
-                flex-direction: column;
-            }
-            .top-container img {
-                position: static;
-                margin-top: 40px;
-                height: 600px;
-                width: auto;
-            }
-            .banner h1 {
-                font-size: 24px; /* Adjust text size for better readability */
-                padding: 10px;
-                font-weight: 800;
-            }
-            
-            .navbar nav {
-                display: none;
-            }
+            .navbar { padding: 15px 20px; }
+            .banner h1 { font-size: 32px; }
+            .mission h2, .contact h2 { font-size: 28px; }
         }
     </style>
 </head>
 <body>
-    <div class="top-container">
-        <section id="home" class="banner">
-            <h1>Welcome to MoriShops</h1>
-        </section>
-        <img src="assets/seller_1.jpg" alt="Top Image">
-    </div>
     <header id="navbar" class="navbar">
-        <div class="logo">MoriShops</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#customer">Customer</a></li>
-                <li><a href="#vendor">Vendor</a></li>
-                <li><a href="#download" class="download">Download</a></li>
-            </ul>
-        </nav>
+        <div class="brand">
+            <img src="assets/minilab_logo.png" alt="MiniLab Nex Logo" class="nav-logo">
+            <div class="logo">MiniLab Nex</div>
+        </div>
     </header>
-    
-    <section id="about">
-        <h2>About</h2>
-        <p>Information about MoriShops...</p>
+
+    <div class="top-container">
+        <section class="banner">
+            <h1>Welcome to MiniLab Nex</h1>
+        </section>
+    </div>
+
+    <section class="mission">
+        <h2>Our Mission</h2>
+        <p>Provide a Mauritian base e-commerce platform where different sellers can sell their products and services, offering buyers everything—products, food, and services—in one place. We also provide 3D printing services for developing spare parts and prototyping.</p>
     </section>
-    <section id="features">
-        <h2>Features</h2>
-        <p>Explore our features...</p>
+
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p><strong>Email:</strong> support@minilab.mu</p>
+        <p><strong>Address:</strong> Royal Road, Trois Boutiques, Triolet, Mauritius</p>
+        <p><strong>Tel:</strong> +230 59459047</p>
     </section>
-    <section id="customer">
-        <h2>Customer</h2>
-        <p>Customer testimonials...</p>
-    </section>
-    <section id="vendor">
-        <h2>Vendor</h2>
-        <p>Vendor information...</p>
-    </section>
-    <section id="download">
-        <h2>Download</h2>
-        <p>Download MoriShops app...</p>
-    </section>
-    
+    <div style="margin-top: 60px;"></div>
+
+     <footer style="margin-bottom: 30px; margin-top: 20px; margin-left: 20px;">
+        <hr style="margin-bottom: 20px;">
+        <p>&copy; <script>document.write(new Date().getFullYear());</script>. MiniLab Nex Ltd (BRN C25223030) | All rights reserved.</p>
+    </footer>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const navbar = document.getElementById("navbar");
-            const logo = document.querySelector(".logo");
             window.addEventListener("scroll", function () {
                 if (window.scrollY > 50) {
                     navbar.classList.add("solid");
