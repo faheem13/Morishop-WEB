@@ -13,6 +13,11 @@
     header, footer { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
     .navbar { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; }
     .navbar .logo { font-size: 24px; font-weight: 700; color: #222; text-decoration: none; }
+    .nav-logo {
+            width: 40px; height: auto; margin-right: 12px;
+        }
+    .brand {
+    display: flex; align-items: center;}
     .navbar nav ul { list-style: none; display: flex; gap: 20px; }
     .navbar nav a { text-decoration: none; font-weight: 500; color: #555; }
     .navbar nav a:hover { color: #000; }
@@ -37,7 +42,11 @@
 <body>
   <header>
     <div class="navbar">
-      <a href="index.html" class="logo">MiniLab Nex</a>
+        <div class="brand">
+            <img src="assets/minilab_logo.png" alt="MiniLab Nex Logo" class="nav-logo">
+            <div href="index.html" class="logo">MiniLab Nex</div>
+        </div>
+
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
