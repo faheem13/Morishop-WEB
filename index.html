@@ -277,6 +277,67 @@
         max-width: 280px;
     }
 }
+
+.cart-checkout {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.cart-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.cart-image img {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 34px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.cart-text {
+    flex: 1;
+}
+
+.cart-text h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+.cart-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .cart-checkout {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 35px;
+        margin: 50px auto;
+    }
+
+    .cart-text h2 {
+        font-size: 32px;
+    }
+
+    .cart-text p {
+        font-size: 16px;
+    }
+
+    .cart-image img {
+        max-width: 280px;
+    }
+}
     </style>
 </head>
 <body>
@@ -379,6 +440,47 @@
 
     <div class="video-image">
         <img src="assets/feed_screenshot.jpg" alt="TAHA Reels Page">
+    </div>
+
+</section>
+
+
+<section class="cart-checkout">
+
+    <div class="cart-image">
+        <img src="assets/cart_screenshot.jpg" alt="TAHA Cart and Checkout">
+    </div>
+
+    <div class="cart-text">
+        <h2>Checkout From Cart</h2>
+
+        <p>
+            Add multiple products from the same vendor to your cart and complete your
+            purchase in a single checkout. TAHA makes shopping easier by allowing buyers
+            to combine products from a seller into one order, reducing the need for
+            multiple transactions and helping save on delivery costs.
+        </p>
+
+        <p>
+            Easily review selected products, update quantities, choose product variations,
+            and view your order summary before proceeding to checkout. The cart is designed
+            to give buyers complete control over their purchases while keeping the process
+            simple and convenient.
+        </p>
+
+        <p>
+            Select your preferred delivery method, pickup option, or shipping address,
+            then complete your order securely. Buyers can purchase products from multiple
+            vendors while maintaining separate carts and checkouts for each seller,
+            ensuring accurate delivery and order management.
+        </p>
+
+        <p>
+            Whether you're buying a single item or multiple products from your favourite
+            vendor, TAHA's cart experience helps streamline the purchasing process and
+            provides a smooth shopping journey from product discovery to checkout.
+        </p>
+
     </div>
 
 </section>
