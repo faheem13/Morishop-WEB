@@ -155,6 +155,67 @@
                 max-width: 280px;
             }
         }
+
+        .nearby-products {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.nearby-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nearby-image img {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 34px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.nearby-text {
+    flex: 1;
+}
+
+.nearby-text h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+.nearby-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+    .nearby-products {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 35px;
+        margin: 50px auto;
+    }
+
+    .nearby-text h2 {
+        font-size: 32px;
+    }
+
+    .nearby-text p {
+        font-size: 16px;
+    }
+
+    .nearby-image img {
+        max-width: 280px;
+    }
+}
     </style>
 </head>
 <body>
@@ -194,6 +255,37 @@
     <div class="explore-image">
         <img src="assets/home_screenshot.jpg" alt="TAHA home page screenshot">
     </div>
+</section>
+
+<section class="nearby-products">
+
+    <div class="nearby-image">
+        <img src="assets/nearby_screenshot.jpg" alt="TAHA Nearby Products">
+    </div>
+
+    <div class="nearby-text">
+        <h2>Find Nearby Products</h2>
+
+        <p>
+            Discover products available around you with TAHA's Nearby page.
+            Browse products from local vendors using an intuitive swipe-based experience
+            designed to make finding products fast, engaging, and effortless.
+        </p>
+
+        <p>
+            Simply swipe through nearby products, explore what is available in your area,
+            and instantly view product details, pricing, and store information. Whether
+            you're looking for fashion, electronics, food, services, or daily essentials,
+            TAHA helps you find what you need closer to home.
+        </p>
+
+        <p>
+            Found something you like? Get directions to the seller's location, contact the
+            vendor directly, and visit the store with ease. Supporting local businesses has
+            never been easier.
+        </p>
+    </div>
+
 </section>
 
     <section class="contact">
