@@ -398,6 +398,101 @@
     .track-image img {
         max-width: 280px;
     }
+
+    .countdown-container {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.countdown-card {
+    backdrop-filter: blur(18px);
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 24px;
+    padding: 18px 28px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+.countdown-title {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.countdown {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.time-box {
+    min-width: 90px;
+}
+
+.time-number {
+    color: white;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.time-label {
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    margin-top: 6px;
+    text-transform: uppercase;
+}
+
+.launch-message {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.launch-subtitle {
+    color: rgba(255,255,255,0.9);
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+
+    .countdown-container {
+        top: 90px;
+        width: 95%;
+    }
+
+    .countdown-card {
+        padding: 15px;
+    }
+
+    .countdown {
+        gap: 8px;
+    }
+
+    .time-box {
+        min-width: 65px;
+    }
+
+    .time-number {
+        font-size: 28px;
+    }
+
+    .time-label {
+        font-size: 11px;
+    }
+
+    .launch-message {
+        font-size: 24px;
+    }
+}
 }
     </style>
 </head>
@@ -420,6 +515,46 @@
         <!-- <section class="banner">
             <h1>Welcome to MiniLab Nex</h1>
         </section> -->
+
+        <div class="countdown-container">
+
+    <div class="countdown-card">
+
+        <div class="countdown-title">
+            Launching on 21 June 2026
+        </div>
+
+        <div id="countdown-wrapper">
+
+            <div class="countdown">
+
+                <div class="time-box">
+                    <div id="days" class="time-number">0</div>
+                    <div class="time-label">Days</div>
+                </div>
+
+                <div class="time-box">
+                    <div id="hours" class="time-number">0</div>
+                    <div class="time-label">Hours</div>
+                </div>
+
+                <div class="time-box">
+                    <div id="minutes" class="time-number">0</div>
+                    <div class="time-label">Minutes</div>
+                </div>
+
+                <div class="time-box">
+                    <div id="seconds" class="time-number">0</div>
+                    <div class="time-label">Seconds</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
     </div>
 
     <section class="explore-products">
@@ -591,16 +726,67 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const navbar = document.getElementById("navbar");
-            window.addEventListener("scroll", function () {
-                if (window.scrollY > 50) {
-                    navbar.classList.add("solid");
-                } else {
-                    navbar.classList.remove("solid");
-                }
-            });
-        });
-    </script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+            navbar.classList.add("solid");
+        } else {
+            navbar.classList.remove("solid");
+        }
+    });
+
+    const targetDate = new Date("2026-06-21T00:00:00").getTime();
+
+    function updateCountdown() {
+
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance <= 0) {
+
+            document.getElementById("countdown-wrapper").innerHTML = `
+                <div class="launch-message">🚀 Launch Day!</div>
+                <div class="launch-subtitle">
+                    TAHA is now available.
+                </div>
+            `;
+
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+        const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24))
+            / (1000 * 60 * 60)
+        );
+
+        const minutes = Math.floor(
+            (distance % (1000 * 60 * 60))
+            / (1000 * 60)
+        );
+
+        const seconds = Math.floor(
+            (distance % (1000 * 60))
+            / 1000
+        );
+
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+    }
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+});
+
+</script>
 </body>
 </html>
