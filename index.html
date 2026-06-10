@@ -94,6 +94,67 @@
             nav ul { gap: 12px; }
             nav ul li a { font-size: 14px; }
         }
+
+        .explore-products {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .explore-text {
+            flex: 1;
+        }
+
+        .explore-text h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 20px;
+        }
+
+        .explore-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 16px;
+        }
+
+        .explore-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .explore-image img {
+            width: 100%;
+            max-width: 360px;
+            border-radius: 34px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+        }
+
+        @media (max-width: 768px) {
+            .explore-products {
+                flex-direction: column;
+                text-align: center;
+                gap: 35px;
+                margin: 50px auto;
+            }
+
+            .explore-text h2 {
+                font-size: 32px;
+            }
+
+            .explore-text p {
+                font-size: 16px;
+            }
+
+            .explore-image img {
+                max-width: 280px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -117,10 +178,23 @@
         </section> -->
     </div>
 
-    <section class="mission">
-        <h2>Our Mission</h2>
-        <p>Provide a Mauritian base e-commerce platform where different sellers can sell their products and services, offering buyers everything—products, food, and services—in one place. We also provide 3D printing services for developing spare parts and prototyping.</p>
-    </section>
+    <section class="explore-products">
+    <div class="explore-text">
+        <h2>Explore Products</h2>
+        <p>
+            Discover a wide range of products on the TAHA home page, from newly added items
+            to discounted deals and top-selling products. Easily browse categories, find trending
+            products, compare prices, and enjoy a simple shopping experience designed for Mauritius.
+        </p>
+        <p>
+            TAHA brings buyers and local vendors together in one easy and fun platform.
+        </p>
+    </div>
+
+    <div class="explore-image">
+        <img src="assets/home_screenshot.jpg" alt="TAHA home page screenshot">
+    </div>
+</section>
 
     <section class="contact">
         <h2>Contact Us</h2>
