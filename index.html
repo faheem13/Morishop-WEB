@@ -216,6 +216,67 @@
         max-width: 280px;
     }
 }
+
+.video-reels {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.video-text {
+    flex: 1;
+}
+
+.video-text h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+.video-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.video-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.video-image img {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 34px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 768px) {
+    .video-reels {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+        margin: 50px auto;
+    }
+
+    .video-text h2 {
+        font-size: 32px;
+    }
+
+    .video-text p {
+        font-size: 16px;
+    }
+
+    .video-image img {
+        max-width: 280px;
+    }
+}
     </style>
 </head>
 <body>
@@ -284,6 +345,47 @@
             vendor directly, and visit the store with ease. Supporting local businesses has
             never been easier.
         </p>
+    </div>
+
+</section>
+
+
+<section class="video-reels">
+
+    <div class="video-text">
+        <h2>Scroll Through Reels</h2>
+
+        <p>
+            Discover products through engaging short-form videos designed to help you
+            explore items in a more interactive and visual way. The Reels page allows
+            buyers to swipe vertically through product videos, making shopping more
+            enjoyable and informative.
+        </p>
+
+        <p>
+            Vendors can showcase their products, demonstrate features, highlight
+            specifications, and share real-world usage examples through short videos.
+            Whether it's fashion, electronics, beauty products, food, home décor,
+            or services, buyers can quickly understand what makes each product unique.
+        </p>
+
+        <p>
+            Every video includes linked products, allowing buyers to instantly view
+            product details, pricing, seller information, and available offers without
+            leaving the reel experience. If a product catches your attention, simply
+            tap the product card and proceed directly to the product page.
+        </p>
+
+        <p>
+            Inspired by modern video discovery platforms, TAHA Reels combines
+            entertainment and shopping into a seamless experience, helping buyers
+            discover trending products while giving vendors a powerful way to
+            showcase their products and reach new customers.
+        </p>
+    </div>
+
+    <div class="video-image">
+        <img src="assets/feed_screenshot.jpg" alt="TAHA Reels Page">
     </div>
 
 </section>
