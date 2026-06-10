@@ -338,6 +338,67 @@
         max-width: 280px;
     }
 }
+
+.track-orders {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.track-text {
+    flex: 1;
+}
+
+.track-text h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+.track-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.track-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.track-image img {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 34px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 768px) {
+    .track-orders {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+        margin: 50px auto;
+    }
+
+    .track-text h2 {
+        font-size: 32px;
+    }
+
+    .track-text p {
+        font-size: 16px;
+    }
+
+    .track-image img {
+        max-width: 280px;
+    }
+}
     </style>
 </head>
 <body>
@@ -474,6 +535,45 @@
             provides a smooth shopping journey from product discovery to checkout.
         </p>
 
+    </div>
+
+</section>
+
+<section class="track-orders">
+
+    <div class="track-text">
+        <h2>Track Order Status</h2>
+
+        <p>
+            Stay informed every step of the way with TAHA's order tracking system.
+            Buyers can monitor the progress of their orders in real-time, providing
+            complete visibility from purchase to delivery or collection.
+        </p>
+
+        <p>
+            Once an order is placed, its status is automatically updated as it moves
+            through different stages such as payment verification, order processing,
+            preparation, dispatch, pickup readiness, and completion. This allows buyers
+            to know exactly where their order stands at any moment.
+        </p>
+
+        <p>
+            Receive clear updates directly within the app and view detailed information
+            about each order, including purchased items, delivery method, payment status,
+            and estimated progress. No more uncertainty about whether an order has been
+            confirmed or shipped.
+        </p>
+
+        <p>
+            TAHA helps create a transparent shopping experience by keeping buyers and
+            vendors connected throughout the entire order journey, ensuring greater
+            confidence and peace of mind when shopping online.
+        </p>
+
+    </div>
+
+    <div class="track-image">
+        <img src="assets/order_screenshot.jpg" alt="TAHA Order Tracking">
     </div>
 
 </section>
