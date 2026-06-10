@@ -398,79 +398,79 @@
     .track-image img {
         max-width: 280px;
     }
-
-    .countdown-container {
-    position: absolute;
-    top: 110px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
 }
 
-.countdown-card {
-    backdrop-filter: blur(18px);
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 24px;
-    padding: 18px 28px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    text-align: center;
+.countdown-container {
+    position: absolute;
+    bottom: 50px;
+    left: 60px;
+    z-index: 10;
 }
 
 .countdown-title {
     color: white;
     font-size: 14px;
     font-weight: 500;
-    letter-spacing: 1px;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
 }
 
 .countdown {
     display: flex;
-    gap: 15px;
-    justify-content: center;
+    gap: 12px;
 }
 
 .time-box {
-    min-width: 90px;
+    width: 95px;
+    height: 95px;
+    background: #111111;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .time-number {
-    color: white;
-    font-size: 42px;
+    color: #ffffff;
+    font-size: 34px;
     font-weight: 700;
     line-height: 1;
 }
 
 .time-label {
-    color: rgba(255,255,255,0.85);
-    font-size: 13px;
-    margin-top: 6px;
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    margin-top: 8px;
 }
 
 .launch-message {
+    background: #111111;
     color: white;
+    padding: 20px 32px;
+    border-radius: 20px;
     font-size: 32px;
     font-weight: 700;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 .launch-subtitle {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.8);
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 @media (max-width: 768px) {
 
     .countdown-container {
-        top: 90px;
-        width: 95%;
-    }
-
-    .countdown-card {
-        padding: 15px;
+        left: 20px;
+        bottom: 30px;
     }
 
     .countdown {
@@ -478,21 +478,23 @@
     }
 
     .time-box {
-        min-width: 65px;
+        width: 65px;
+        height: 65px;
+        border-radius: 14px;
     }
 
     .time-number {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .time-label {
-        font-size: 11px;
+        font-size: 9px;
+        margin-top: 4px;
     }
 
-    .launch-message {
-        font-size: 24px;
+    .countdown-title {
+        font-size: 12px;
     }
-}
 }
     </style>
 </head>
@@ -518,36 +520,32 @@
 
         <div class="countdown-container">
 
-    <div class="countdown-card">
+    <div class="countdown-title">
+        Launching 21 June 2026
+    </div>
 
-        <div class="countdown-title">
-            Launching on 21 June 2026
-        </div>
+    <div id="countdown-wrapper">
 
-        <div id="countdown-wrapper">
+        <div class="countdown">
 
-            <div class="countdown">
+            <div class="time-box">
+                <div id="days" class="time-number">00</div>
+                <div class="time-label">Days</div>
+            </div>
 
-                <div class="time-box">
-                    <div id="days" class="time-number">0</div>
-                    <div class="time-label">Days</div>
-                </div>
+            <div class="time-box">
+                <div id="hours" class="time-number">00</div>
+                <div class="time-label">Hours</div>
+            </div>
 
-                <div class="time-box">
-                    <div id="hours" class="time-number">0</div>
-                    <div class="time-label">Hours</div>
-                </div>
+            <div class="time-box">
+                <div id="minutes" class="time-number">00</div>
+                <div class="time-label">Minutes</div>
+            </div>
 
-                <div class="time-box">
-                    <div id="minutes" class="time-number">0</div>
-                    <div class="time-label">Minutes</div>
-                </div>
-
-                <div class="time-box">
-                    <div id="seconds" class="time-number">0</div>
-                    <div class="time-label">Seconds</div>
-                </div>
-
+            <div class="time-box">
+                <div id="seconds" class="time-number">00</div>
+                <div class="time-label">Seconds</div>
             </div>
 
         </div>
@@ -725,7 +723,7 @@
         <p>&copy; <script>document.write(new Date().getFullYear());</script>. MiniLab Nex Ltd (BRN C25223030) | All rights reserved.</p>
     </footer>
 
-    <script>
+  <script>
 
 document.addEventListener("DOMContentLoaded", function () {
 
