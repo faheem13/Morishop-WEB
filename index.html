@@ -50,9 +50,32 @@
             text-decoration: underline;
         }
         .top-container {
-            position: relative; width: 100%; height: 100vh;
-            background: url('assets/taha_website_banner_final2.webp') center/cover no-repeat;
-        }
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('assets/taha_website_banner_final2.webp') center/cover no-repeat;
+}
+
+/* Mobile + tablet banner */
+@media (max-width: 1024px) {
+    .top-container {
+        height: 100vh;
+        min-height: 720px;
+        background-image: url('assets/taha_website_banner_final_mobile.webp');
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .top-container {
+        min-height: 680px;
+        background-size: cover;
+        background-position: center top;
+    }
+}
         /* .top-container::before {
             content: '';
             position: absolute; top: 0; left: 0; right: 0; bottom: 0;
@@ -466,34 +489,66 @@
     font-size: 15px;
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: 1024px) {
     .countdown-container {
-        left: 160px;
-        bottom: 60px;
-    }
-
-    .countdown {
-        gap: 8px;
-    }
-
-    .time-box {
-        width: 65px;
-        height: 65px;
-        border-radius: 14px;
-    }
-
-    .time-number {
-        font-size: 24px;
-    }
-
-    .time-label {
-        font-size: 9px;
-        margin-top: 4px;
+        left: 20px;
+        right: 20px;
+        bottom: 35px;
+        width: auto;
     }
 
     .countdown-title {
+        font-size: 11px;
+        margin-bottom: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .countdown {
+        gap: 6px;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+
+    .time-box {
+        width: 58px;
+        height: 58px;
+        border-radius: 13px;
+    }
+
+    .time-number {
+        font-size: 21px;
+    }
+
+    .time-label {
+        font-size: 7px;
+        margin-top: 4px;
+        letter-spacing: 0.6px;
+    }
+
+    .launch-message {
+        width: fit-content;
+        font-size: 20px;
+        padding: 14px 20px;
+        border-radius: 16px;
+    }
+
+    .launch-subtitle {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .time-box {
+        width: 52px;
+        height: 52px;
+    }
+
+    .time-number {
+        font-size: 18px;
+    }
+
+    .time-label {
+        font-size: 6px;
     }
 }
     </style>
