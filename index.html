@@ -514,12 +514,12 @@
 }
 
 @media (max-width: 1024px) {
-    .countdown-container {
-        left: 20px;
-        right: 20px;
-        bottom: 35px;
-        width: auto;
-    }
+     .countdown-container {
+    position: absolute;
+    left: 50%;
+    bottom: 85px;
+    transform: translateX(-50%);
+}
 
     .countdown-title {
         font-size: 11px;
@@ -529,7 +529,7 @@
 
     .countdown {
         gap: 6px;
-        justify-content: flex-start;
+        justify-content: center;
         flex-wrap: nowrap;
     }
 
