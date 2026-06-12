@@ -56,32 +56,37 @@
     background: url('assets/taha_website_banner_final2.webp') center/cover no-repeat;
 }
 
+/* Tablet */
 @media (max-width: 1024px) {
 
     .top-container {
-        height: 520px;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+
+        height: auto;
         min-height: unset;
 
         background-image: url('assets/taha_website_banner_final_mobile_final.webp');
-        background-size: 100% auto;
-        background-position: top center;
+        background-size: contain;
+        background-position: center top;
         background-repeat: no-repeat;
     }
-
 }
 
+/* Mobile */
 @media (max-width: 768px) {
 
     .top-container {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+
         height: auto;
-        aspect-ratio: 9 / 16;
 
         background-image: url('assets/taha_website_banner_final_mobile_final.webp');
         background-size: contain;
-        background-position: top center;
+        background-position: center top;
         background-repeat: no-repeat;
     }
-
 }
 
 @media (max-width: 480px) {
