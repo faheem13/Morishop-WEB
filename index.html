@@ -580,6 +580,31 @@
         font-size: 6px;
     }
 }
+
+.store-buttons {
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.store-badge {
+    height: 60px;
+    width: auto;
+    transition: transform 0.25s ease;
+}
+
+.store-badge:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .store-badge {
+        height: 50px;
+    }
+}
     </style>
 </head>
 <body>
@@ -828,17 +853,46 @@ document.addEventListener("DOMContentLoaded", function () {
         const now = new Date().getTime();
         const distance = targetDate - now;
 
-        if (distance <= 0) {
+        if (distance <= 50) {
 
-            document.getElementById("countdown-wrapper").innerHTML = `
-                <div class="launch-message">🚀 Launch Day!</div>
-                <div class="launch-subtitle">
-                    TAHA is now available.
-                </div>
-            `;
+    document.getElementById("countdown-wrapper").innerHTML = `
+        <div class="launch-message">🚀 Launch Day!</div>
 
-            return;
-        }
+        <div class="launch-subtitle">
+            TAHA is now available.
+        </div>
+
+        <div class="store-buttons">
+
+            <a
+                href="https://play.google.com/store/apps/details?id=com.minilab.bingo&pli=1"
+                target="_blank"
+                aria-label="Get it on Google Play"
+            >
+                <img
+                    src="assets/play_store_download_btn.png"
+                    alt="Get it on Google Play"
+                    class="store-badge"
+                >
+            </a>
+
+            <a
+                href="#"
+                target="_blank"
+                aria-label="Download on the App Store"
+            >
+                <img
+                    src="assets/app_store_download_btn.png"
+                    alt="Download on the App Store"
+                    class="store-badge"
+                >
+            </a>
+
+        </div>
+    `;
+
+    return;
+}
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
